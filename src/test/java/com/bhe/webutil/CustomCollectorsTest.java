@@ -1,4 +1,4 @@
-package com.github.bhe.webutil;
+package com.bhe.webutil;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -7,7 +7,7 @@ import org.junit.rules.ExpectedException;
 import java.util.Optional;
 import java.util.stream.Stream;
 
-import static com.github.bhe.webutil.CustomCollectors.onlyOptionalElement;
+import static com.bhe.webutil.CustomCollectors.onlyOptionalElement;
 import static org.junit.Assert.*;
 
 public class CustomCollectorsTest {

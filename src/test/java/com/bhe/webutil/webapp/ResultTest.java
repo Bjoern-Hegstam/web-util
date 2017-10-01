@@ -1,10 +1,10 @@
-package com.github.bhe.webutil.webapp;
+package com.bhe.webutil.webapp;
 
 import org.junit.Test;
 
 import java.util.HashMap;
 
-import static com.github.bhe.webutil.webapp.ResultBuilder.result;
+import static com.bhe.webutil.webapp.ResultBuilder.result;
 import static org.junit.Assert.assertEquals;
 
 public class ResultTest {

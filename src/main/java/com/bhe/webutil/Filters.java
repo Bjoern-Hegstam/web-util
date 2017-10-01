@@ -1,7 +1,7 @@
-package com.github.bhe.webutil;
+package com.bhe.webutil;
 
-import com.github.bhe.webutil.webapp.User;
-import com.github.bhe.webutil.webapp.sparkwrapper.SparkRequest;
+import com.bhe.webutil.webapp.User;
+import com.bhe.webutil.webapp.sparkwrapper.SparkRequest;
 import spark.Request;
 import spark.Response;
 

@@ -1,6 +1,6 @@
-package com.github.bhe.webutil.webapp;
+package com.bhe.webutil.webapp;
 
-import com.github.bhe.webutil.Filters;
+import com.bhe.webutil.Filters;
 import spark.Service;
 
 import java.util.List;

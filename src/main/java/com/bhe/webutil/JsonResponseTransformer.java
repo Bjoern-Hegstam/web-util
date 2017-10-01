@@ -1,4 +1,4 @@
-package com.github.bhe.webutil;
+package com.bhe.webutil;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import spark.ResponseTransformer;

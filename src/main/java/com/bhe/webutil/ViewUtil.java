@@ -1,6 +1,6 @@
-package com.github.bhe.webutil;
+package com.bhe.webutil;
 
-import com.github.bhe.webutil.webapp.Request;
+import com.bhe.webutil.webapp.Request;
 import org.apache.velocity.app.VelocityEngine;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;

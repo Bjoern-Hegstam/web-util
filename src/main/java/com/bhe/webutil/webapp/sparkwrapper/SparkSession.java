@@ -1,11 +1,11 @@
-package com.github.bhe.webutil.webapp.sparkwrapper;
+package com.bhe.webutil.webapp.sparkwrapper;
 
-import com.github.bhe.webutil.webapp.User;
+import com.bhe.webutil.webapp.User;
 import spark.Session;
 
 import java.util.Optional;
 
-public class SparkSession implements com.github.bhe.webutil.webapp.Session {
+public class SparkSession implements com.bhe.webutil.webapp.Session {
     private final Session session;
 
     SparkSession(Session session) {

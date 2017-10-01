@@ -1,4 +1,4 @@
-package com.github.bhe.webutil;
+package com.bhe.webutil;
 
 import java.util.ArrayList;
 import java.util.List;

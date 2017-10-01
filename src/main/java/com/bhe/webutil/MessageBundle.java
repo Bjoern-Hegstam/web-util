@@ -1,4 +1,4 @@
-package com.github.bhe.webutil;
+package com.bhe.webutil;
 
 import java.text.MessageFormat;
 import java.util.Locale;
