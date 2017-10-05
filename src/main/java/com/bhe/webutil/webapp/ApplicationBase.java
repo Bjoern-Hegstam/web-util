@@ -10,10 +10,12 @@ import static spark.Service.ignite;
 public abstract class ApplicationBase {
     private final List<Controller> appControllers;
     private final List<Controller> apiControllers;
+    private final boolean apiRequiresUserLogin;
 
-    public ApplicationBase(List<Controller> appControllers, List<Controller> apiControllers) {
+    public ApplicationBase(List<Controller> appControllers, List<Controller> apiControllers, boolean apiRequiresUserLogin) {
         this.appControllers = appControllers;
         this.apiControllers = apiControllers;
+        this.apiRequiresUserLogin = apiRequiresUserLogin;
     }
 
     public void init() {
@@ -28,7 +30,9 @@ public abstract class ApplicationBase {
         appControllers.forEach(c -> c.configureRoutes(http));
 
         http.path("/api", () -> {
-            http.before("/*", Filters::userIsLoggedIn);
+            if (apiRequiresUserLogin) {
+                http.before("/*", Filters::userIsLoggedIn);
+            }
             apiControllers.forEach(c -> c.configureRoutes(http));
         });
     }
