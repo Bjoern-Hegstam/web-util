@@ -1,4 +1,4 @@
-package com.bhe.webutil;
+package com.bhegstam.webutil;
 
 import java.text.MessageFormat;
 import java.util.Locale;

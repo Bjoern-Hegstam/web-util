@@ -1,7 +1,7 @@
-package com.bhe.webutil.webapp;
+package com.bhegstam.webutil.webapp;
 
-import com.bhe.webutil.ViewUtil;
-import com.bhe.webutil.webapp.sparkwrapper.SparkRequest;
+import com.bhegstam.webutil.ViewUtil;
+import com.bhegstam.webutil.webapp.sparkwrapper.SparkRequest;
 import spark.*;
 
 public class SparkWrappers {

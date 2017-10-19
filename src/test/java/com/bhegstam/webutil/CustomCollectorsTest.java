@@ -1,4 +1,4 @@
-package com.bhe.webutil;
+package com.bhegstam.webutil;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -7,7 +7,6 @@ import org.junit.rules.ExpectedException;
 import java.util.Optional;
 import java.util.stream.Stream;
 
-import static com.bhe.webutil.CustomCollectors.onlyOptionalElement;
 import static org.junit.Assert.*;
 
 public class CustomCollectorsTest {
@@ -18,7 +17,7 @@ public class CustomCollectorsTest {
     @Test
     public void onlyOptionalElement_emptyStream() {
         // when
-        Optional<Object> result = Stream.of().collect(onlyOptionalElement());
+        Optional<Object> result = Stream.of().collect(CustomCollectors.onlyOptionalElement());
 
         // then
         assertFalse(result.isPresent());
@@ -27,7 +26,7 @@ public class CustomCollectorsTest {
     @Test
     public void onlyOptionalElement_singleElementStream() {
         // when
-        Optional<String> result = Stream.of("foo").collect(onlyOptionalElement());
+        Optional<String> result = Stream.of("foo").collect(CustomCollectors.onlyOptionalElement());
 
         // then
         assertTrue(result.isPresent());
@@ -41,6 +40,6 @@ public class CustomCollectorsTest {
         expectedException.expectMessage("More than one element found");
 
         // when
-        Optional<String> result = Stream.of("foo", "bar").collect(onlyOptionalElement());
+        Optional<String> result = Stream.of("foo", "bar").collect(CustomCollectors.onlyOptionalElement());
     }
 }

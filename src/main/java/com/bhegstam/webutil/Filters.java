@@ -1,7 +1,7 @@
-package com.bhe.webutil;
+package com.bhegstam.webutil;
 
-import com.bhe.webutil.webapp.User;
-import com.bhe.webutil.webapp.sparkwrapper.SparkRequest;
+import com.bhegstam.webutil.webapp.User;
+import com.bhegstam.webutil.webapp.sparkwrapper.SparkRequest;
 import spark.Request;
 import spark.Response;
 

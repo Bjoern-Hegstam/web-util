@@ -1,6 +1,6 @@
-package com.bhe.webutil.webapp;
+package com.bhegstam.webutil.webapp;
 
-import com.bhe.webutil.Filters;
+import com.bhegstam.webutil.Filters;
 import spark.Service;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.bhe.webutil.webapp;
+package com.bhegstam.webutil.webapp;
 
 import java.util.HashMap;
 import java.util.Map;

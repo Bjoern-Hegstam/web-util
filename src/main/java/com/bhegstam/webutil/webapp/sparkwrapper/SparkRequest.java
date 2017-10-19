@@ -1,8 +1,9 @@
-package com.bhe.webutil.webapp.sparkwrapper;
+package com.bhegstam.webutil.webapp.sparkwrapper;
 
+import com.bhegstam.webutil.webapp.Session;
 import spark.Request;
 
-public class SparkRequest implements com.bhe.webutil.webapp.Request {
+public class SparkRequest implements com.bhegstam.webutil.webapp.Request {
     private final Request request;
 
     public SparkRequest(Request request) {
@@ -10,7 +11,7 @@ public class SparkRequest implements com.bhe.webutil.webapp.Request {
     }
 
     @Override
-    public com.bhe.webutil.webapp.Session session() {
+    public Session session() {
         return new SparkSession(request.session());
     }
 

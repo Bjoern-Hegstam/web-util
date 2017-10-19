@@ -1,10 +1,9 @@
-package com.bhe.webutil.webapp;
+package com.bhegstam.webutil.webapp;
 
 import org.junit.Test;
 
 import java.util.HashMap;
 
-import static com.bhe.webutil.webapp.ResultBuilder.result;
 import static org.junit.Assert.assertEquals;
 
 public class ResultTest {
@@ -14,7 +13,7 @@ public class ResultTest {
         String redirectPath = "REDIRECT_PATH";
 
         // when
-        Result result = result().redirectTo(redirectPath);
+        Result result = ResultBuilder.result().redirectTo(redirectPath);
 
         // then
         assertIsValid(result);
@@ -28,7 +27,7 @@ public class ResultTest {
         HashMap<String, Object> model = new HashMap<>();
 
         // when
-        Result result = result().render(templatePath, model);
+        Result result = ResultBuilder.result().render(templatePath, model);
 
         // then
         assertIsValid(result);
@@ -42,7 +41,7 @@ public class ResultTest {
         Object payload = new Object();
 
         // when
-        Result result = result().returnPayload(payload);
+        Result result = ResultBuilder.result().returnPayload(payload);
 
         // then
         assertIsValid(result);
