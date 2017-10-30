@@ -14,6 +14,9 @@ public class SparkWrappers {
     }
 
     private static Object parseResult(spark.Request request, Response response, Result result) {
+        result.getContentType().ifPresent(response::type);
+        result.getStatusCode().ifPresent(response::status);
+
         if (result.isRedirect()) {
             response.redirect(result.redirectPath);
             return null;

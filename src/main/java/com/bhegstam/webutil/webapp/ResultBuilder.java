@@ -4,9 +4,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ResultBuilder {
+    private String contentType;
+    private Integer statusCode;
+
     private String redirectPath;
     private Object responsePayload;
     private String renderTemplatePath;
+
     private Map<String, Object> renderModel;
 
     private ResultBuilder() {
@@ -14,6 +18,16 @@ public class ResultBuilder {
 
     public static ResultBuilder result() {
         return new ResultBuilder();
+    }
+
+    public ResultBuilder type(String contentType) {
+        this.contentType = contentType;
+        return this;
+    }
+
+    public ResultBuilder statusCode(int statusCode) {
+        this.statusCode = statusCode;
+        return this;
     }
 
     public Result redirectTo(String path) {
@@ -41,7 +55,9 @@ public class ResultBuilder {
                 redirectPath,
                 responsePayload,
                 renderTemplatePath,
-                renderModel
+                renderModel,
+                contentType,
+                statusCode
         );
     }
 }
