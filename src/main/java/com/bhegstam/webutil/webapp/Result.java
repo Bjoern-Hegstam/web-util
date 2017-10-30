@@ -32,11 +32,11 @@ public class Result {
         this.headers = headers;
     }
 
-    Optional<String> getContentType() {
+    public Optional<String> getContentType() {
         return Optional.ofNullable(contentType);
     }
 
-    Optional<Integer> getStatusCode() {
+    public Optional<Integer> getStatusCode() {
         return Optional.ofNullable(statusCode);
     }
 
@@ -44,15 +44,15 @@ public class Result {
         return headers;
     }
 
-    boolean isRedirect() {
+    public boolean isRedirect() {
         return redirectPath != null;
     }
 
-    boolean isPayloadResponse() {
+    public boolean isPayloadResponse() {
         return responsePayload != null;
     }
 
-    boolean isRender() {
+    public boolean isRender() {
         return renderTemplatePath != null;
     }
 }
