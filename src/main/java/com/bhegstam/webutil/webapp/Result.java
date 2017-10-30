@@ -12,14 +12,24 @@ public class Result {
 
     private final String contentType;
     private final Integer statusCode;
+    private final Map<String, String> headers;
 
-    Result(String redirectPath, Object responsePayload, String renderTemplatePath, Map<String, Object> renderModel, String contentType, Integer statusCode) {
+    Result(
+            String redirectPath,
+            Object responsePayload,
+            String renderTemplatePath,
+            Map<String, Object> renderModel,
+            String contentType,
+            Integer statusCode,
+            Map<String, String> headers
+    ) {
         this.redirectPath = redirectPath;
         this.responsePayload = responsePayload;
         this.renderTemplatePath = renderTemplatePath;
         this.renderModel = renderModel != null ? renderModel : new HashMap<>();
         this.contentType = contentType;
         this.statusCode = statusCode;
+        this.headers = headers;
     }
 
     Optional<String> getContentType() {
@@ -28,6 +38,10 @@ public class Result {
 
     Optional<Integer> getStatusCode() {
         return Optional.ofNullable(statusCode);
+    }
+
+    public Map<String, String> getHeaders() {
+        return headers;
     }
 
     boolean isRedirect() {

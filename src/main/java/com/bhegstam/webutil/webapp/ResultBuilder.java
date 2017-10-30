@@ -6,6 +6,7 @@ import java.util.Map;
 public class ResultBuilder {
     private String contentType;
     private Integer statusCode;
+    private final Map<String, String> headers;
 
     private String redirectPath;
     private Object responsePayload;
@@ -14,6 +15,7 @@ public class ResultBuilder {
     private Map<String, Object> renderModel;
 
     private ResultBuilder() {
+        headers = new HashMap<>();
     }
 
     public static ResultBuilder result() {
@@ -27,6 +29,11 @@ public class ResultBuilder {
 
     public ResultBuilder statusCode(int statusCode) {
         this.statusCode = statusCode;
+        return this;
+    }
+
+    public ResultBuilder header(String header, String value) {
+        headers.put(header, value);
         return this;
     }
 
@@ -57,7 +64,8 @@ public class ResultBuilder {
                 renderTemplatePath,
                 renderModel,
                 contentType,
-                statusCode
+                statusCode,
+                headers
         );
     }
 }
