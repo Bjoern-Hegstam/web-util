@@ -55,4 +55,12 @@ public class Result {
     public boolean isRender() {
         return renderTemplatePath != null;
     }
+
+    public String getRedirectPath() {
+        return redirectPath;
+    }
+
+    public String getRenderTemplatePath() {
+        return renderTemplatePath;
+    }
 }
