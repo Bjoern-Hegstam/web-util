@@ -31,7 +31,7 @@ public abstract class ApplicationBase {
 
         http.path("/api", () -> {
             if (apiRequiresUserLogin) {
-                http.before("/*", Filters::userIsLoggedIn);
+                http.before("/*", Filters.userIsLoggedIn(Filters.Actions.haltNotAuthorized));
             }
             apiControllers.forEach(c -> c.configureRoutes(http));
         });
