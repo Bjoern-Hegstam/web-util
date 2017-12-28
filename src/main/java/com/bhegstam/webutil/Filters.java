@@ -2,6 +2,7 @@ package com.bhegstam.webutil;
 
 import com.bhegstam.webutil.webapp.User;
 import com.bhegstam.webutil.webapp.sparkwrapper.SparkRequest;
+import org.eclipse.jetty.http.HttpStatus;
 import spark.Filter;
 import spark.Request;
 import spark.Response;
@@ -38,7 +39,10 @@ public class Filters {
     public static class Actions {
         public static Action haltNotAuthorized = (req, resp) -> halt(401, "Not authorized");
         public static Action redirectNotAuthorized(String redirectPath) {
-            return (req, resp) -> resp.redirect(redirectPath);
+            return (req, resp) -> {
+                resp.redirect(redirectPath);
+                halt(HttpStatus.FOUND_302);
+            };
         }
     }
 }
