@@ -11,11 +11,17 @@ public abstract class ApplicationBase {
     private final List<Controller> appControllers;
     private final List<Controller> apiControllers;
     private final boolean apiRequiresUserLogin;
+    private final boolean appRoutesRegisteredAfterApiRoutes;
 
     public ApplicationBase(List<Controller> appControllers, List<Controller> apiControllers, boolean apiRequiresUserLogin) {
+        this(appControllers, apiControllers, apiRequiresUserLogin, false);
+    }
+
+    public ApplicationBase(List<Controller> appControllers, List<Controller> apiControllers, boolean apiRequiresUserLogin, boolean appRoutesRegisteredAfterApiRoutes) {
         this.appControllers = appControllers;
         this.apiControllers = apiControllers;
         this.apiRequiresUserLogin = apiRequiresUserLogin;
+        this.appRoutesRegisteredAfterApiRoutes = appRoutesRegisteredAfterApiRoutes;
     }
 
     public void init() {
@@ -27,7 +33,9 @@ public abstract class ApplicationBase {
     protected abstract void configureServer(Service http);
 
     private void configureRoutes(Service http) {
-        appControllers.forEach(c -> c.configureRoutes(http));
+        if (!appRoutesRegisteredAfterApiRoutes) {
+            appControllers.forEach(c -> c.configureRoutes(http));
+        }
 
         http.path("/api", () -> {
             if (apiRequiresUserLogin) {
@@ -35,5 +43,9 @@ public abstract class ApplicationBase {
             }
             apiControllers.forEach(c -> c.configureRoutes(http));
         });
+
+        if (appRoutesRegisteredAfterApiRoutes) {
+            appControllers.forEach(c -> c.configureRoutes(http));
+        }
     }
 }
