@@ -4,7 +4,7 @@
 
     <groupId>com.github.Bjoern-Hegstam</groupId>
     <artifactId>web-util</artifactId>
-    <version>4.4</version>
+    <version>4.5-SNAPSHOT</version>
 
     <properties>
         <java.version>1.8</java.version>
