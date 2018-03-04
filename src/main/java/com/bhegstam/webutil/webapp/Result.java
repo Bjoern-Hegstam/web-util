@@ -63,4 +63,8 @@ public class Result {
     public String getRenderTemplatePath() {
         return renderTemplatePath;
     }
+
+    public Object getResponsePayload() {
+        return responsePayload;
+    }
 }
